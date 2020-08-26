@@ -7829,4 +7829,9 @@ function onYouTubeIframeAPIReady() {
   theme.ProductVideo.loadVideos(theme.ProductVideo.hosts.youtube);
 }
 
+// Update price when updating quantity in cart without page refresh
+$('.qty-input').on('input', function() {
+	$( "#cart_update" ).trigger( "click" );
+});
+
 $(theme.init);
