@@ -19,7 +19,7 @@
 <div data-section-id="{{ section.id }}" data-section-type="header-section" data-header-section>
   {% if section.settings.message %}
     {% if section.settings.home_page_only == false or request.page_type == 'index' %}
-      <style>
+      {% style %}
         .announcement-bar {
           background-color: {{ section.settings.color_bg }};
         }
@@ -39,7 +39,7 @@
         .announcement-bar__message {
           color: {{ section.settings.color_text }};
         }
-      </style>
+      {% endstyle %}
 
       <div class="announcement-bar" role="region" aria-label="{{ 'sections.header.announcement_bar_label' | t }}">
         {%- unless section.settings.message_link == blank -%}
